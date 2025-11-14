@@ -9,7 +9,7 @@
 	"compatibility_date": "2025-11-13",
 	"observability": {
 		"enabled": true
-	}
+	},
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -25,7 +25,7 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	// "vars": { "MY_VARIABLE": "production_value" }
+	"vars": { "MY_VARIABLE": "production_value", "BLOCKLIST_URL": "https://github.com/chnirt/chnirt-dns/blob/main/blocklist.txt" },
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
@@ -40,4 +40,10 @@
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
 	 */
 	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
+	"kv_namespaces": [
+		{
+			"binding": "BLOCKLIST_KV",
+			"id": "<PASTE_YOUR_ID_HERE>" // để trống lần đầu, deploy xong copy ID từ dashboard vào đây
+		}
+	]
 }
