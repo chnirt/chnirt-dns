@@ -1,0 +1,7 @@
+# Public blocklist
+ads.example.com
+spamdomain.net
+
+# Custom của Chnirt
+malware.test
+mycustomdomain.com
